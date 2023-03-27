@@ -34,13 +34,18 @@ class App extends React.Component {
     return( 
         <div className={css.statistics}>
           <Section title="Please leave feedback">
-            <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.handleFeedback} />
+            <FeedbackOptions
+              options={Object.keys(this.state)}
+              onLeaveFeedback={this.handleFeedback} />
           </Section>
           <Section title="Statistics">
-            {this.countTotalFeedback() === 0 ? (
-              <Notification message="No feedback given" />
-            ) : (
-              <Statistics good={good} neutral={neutral} bad={bad} total={this.countTotalFeedback()} positivePercentage={this.countPositiveFeedbackPercentage()} />)
+            {this.countTotalFeedback() === 0 ? (<Notification message="No feedback given" />) : (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()} />)
             }
           </Section>
         
