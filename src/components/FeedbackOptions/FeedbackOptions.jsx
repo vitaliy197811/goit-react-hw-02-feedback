@@ -7,9 +7,12 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
         <>
             <div className={css.buttonBox}>
                 {options.map(option => (
-                    <button className={css.button} type='button' onClick={() => {
-                        onLeaveFeedback(option);
-                        }} key={option}>{ option[0].toUpperCase() + option.slice(1) }
+                    <button
+                        className={css.button}
+                        type='button'
+                        onClick={() => onLeaveFeedback(option)}
+                        key={option}>
+                        {option[0].toUpperCase() + option.slice(1)}
                     </button>
                 ))}
             </div>
